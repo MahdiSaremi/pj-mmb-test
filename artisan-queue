@@ -1,0 +1,5 @@
+<?php
+
+$_SERVER['argv'] = ['artisan', 'queue:work', '--max-time=55'];
+
+include 'artisan';
