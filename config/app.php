@@ -124,5 +124,7 @@ return [
     ],
 
     'host_mode' => env('HOST_MODE', false),
+    'enable_proxy' => env('ENABLE_PROXY', false),
+    'proxy' => env('PROXY'),
 
 ];

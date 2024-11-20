@@ -22,9 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // if (!config('app.host_mode'))
-        //     TelegramRequest::appendOptions([
-        //         'proxy' => '192.168.215.172:10809',
-        //     ]);
+        if (!config('app.enable_proxy'))
+            TelegramRequest::appendOptions([
+                'proxy' => config('app.proxy'),
+            ]);
     }
 }
