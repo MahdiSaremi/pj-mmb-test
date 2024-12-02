@@ -2,14 +2,10 @@
 
 namespace App\Mmb\Handlers;
 
-use App\Mmb\Admin\Commands\ChatPageCommand;
-use App\Mmb\Admin\Commands\ShowContentCommand;
 use App\Mmb\Main\Commands;
 use App\Models\BotUser;
 use Mmb\Action\Update\HandlerFactory;
 use Mmb\Action\Update\UpdateHandler;
-use Mmb\Support\Db\ModelFinder;
-use Modules\Account\Events\AccountIsOnline;
 use Rapid\Mmb\PanelKit\Lock\LockRequest;
 
 class PrivateHandler extends UpdateHandler
@@ -33,9 +29,6 @@ class PrivateHandler extends UpdateHandler
 
                 $handler->callback(LockRequest::class),
                 LockRequest::for('main'),
-
-                ChatPageCommand::class,
-                ShowContentCommand::class,
 
                 // GlobalDialogHandler::make(),
 
