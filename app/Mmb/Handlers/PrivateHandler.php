@@ -15,8 +15,6 @@ use Rapid\Mmb\PanelKit\Lock\LockRequest;
 class PrivateHandler extends UpdateHandler
 {
 
-    protected bool $isBusy = false;
-
     public function handle(HandlerFactory $handler)
     {
         $handler
@@ -28,36 +26,28 @@ class PrivateHandler extends UpdateHandler
                 validate: $this->validateUser(...),
                 autoSave: true,
             )
-            ->invoke(fn (BotUser $record) => ModelFinder::storeCurrent($record->account))
-            ->invoke(fn (BotUser $record) => $this->isBusy = $record->isBusy())
             ->handle([
-                when(!$this->isBusy, [
 
-                    // \Modules\Home\Mmb\Commands\StartCommand::class,
-                    Commands\UserCommand::class,
-                    $handler->inherit('commands'),
+                // \Modules\Home\Mmb\Commands\StartCommand::class,
+                $handler->inherit('commands'),
 
-                    $handler->callback(LockRequest::class),
-                    LockRequest::for('main'),
+                $handler->callback(LockRequest::class),
+                LockRequest::for('main'),
 
-                    ChatPageCommand::class,
-                    ShowContentCommand::class,
+                ChatPageCommand::class,
+                ShowContentCommand::class,
 
-                    // GlobalDialogHandler::make(),
+                // GlobalDialogHandler::make(),
 
-                    // MiddleActions\RequirePhoneMiddleAction::class,
-                    // MiddleActions\RequireNameMiddleAction::class,
+                // MiddleActions\RequirePhoneMiddleAction::class,
+                // MiddleActions\RequireNameMiddleAction::class,
 
-                    // $handler->afterMiddles(Sections\Home\HomeSection::class, 'main'),
+                // $handler->afterMiddles(Sections\Home\HomeSection::class, 'main'),
 
-                    $handler->inherit(),
-                ]),
-
-                $handler->inherit('force'),
+                $handler->inherit(),
 
                 $handler->step(),
             ])
-            ->invoke($this->updateOnline(...))
         ;
     }
 
@@ -76,18 +66,6 @@ class PrivateHandler extends UpdateHandler
     {
         // return $user->ban === false || $user->can('IgnoreBan');
         return true;
-    }
-
-    public function updateOnline(BotUser $record)
-    {
-        if (!$record->account->was_online)
-        {
-            event(new AccountIsOnline($record->account));
-        }
-
-        $record->account->update([
-            'last_online_at' => now(),
-        ]);
     }
 
 }

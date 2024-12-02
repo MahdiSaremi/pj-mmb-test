@@ -1961,12 +1961,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rapidmmb/mmb.git",
-                "reference": "6a2cd11c43b24e309a2414b35951766d9f3b438f"
+                "reference": "73547aa54a64a5c3c1ec5a113eeff52e0c6a824c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rapidmmb/mmb/zipball/6a2cd11c43b24e309a2414b35951766d9f3b438f",
-                "reference": "6a2cd11c43b24e309a2414b35951766d9f3b438f",
+                "url": "https://api.github.com/repos/rapidmmb/mmb/zipball/73547aa54a64a5c3c1ec5a113eeff52e0c6a824c",
+                "reference": "73547aa54a64a5c3c1ec5a113eeff52e0c6a824c",
                 "shasum": ""
             },
             "require": {
@@ -2007,7 +2007,7 @@
                 "issues": "https://github.com/rapidmmb/mmb/issues",
                 "source": "https://github.com/rapidmmb/mmb/tree/main"
             },
-            "time": "2024-11-04T18:04:38+00:00"
+            "time": "2024-12-02T15:59:19+00:00"
         },
         {
             "name": "mmb/panelkit",

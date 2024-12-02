@@ -27,6 +27,7 @@ return [
 
             'handlers' => [
                 Handlers\PrivateHandler::class,
+                Handlers\InlineQueryHandler::class,
             ],
         ],
     ],
