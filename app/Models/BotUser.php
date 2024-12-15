@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 use Mmb\Support\Db\HasFinder;
+use Mmb\Support\Step\Contracts\Stepper;
 use Mmb\Support\Step\HasStep;
-use Mmb\Support\Step\Stepping;
+use Mmb\Support\Telegram\Contracts\TelegramIdentifier;
 use Rapid\Laplus\Guide\Attributes\IsRelation;
 use Rapid\Laplus\Present\HasPresent;
 use Rapid\Laplus\Present\Present;
@@ -18,7 +19,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @mixin \Rapid\_Stub\_844975b172352e06c0dc31bdb4a7cab1
  * @EndGuide
  */
-class BotUser extends Authenticatable implements Stepping
+class BotUser extends Authenticatable implements Stepper, TelegramIdentifier
 {
     use HasFactory, HasPresent, HasStep, HasFinder, HasRoles;
 
@@ -33,6 +34,11 @@ class BotUser extends Authenticatable implements Stepping
         $present->string('invite_code')->nullable();
         $present->belongsTo(BotUser::class, 'invited_by')->nullOnDelete();
         $present->timestamps();
+    }
+
+    public function getTelegramIdKeyName(): string
+    {
+        return 'id';
     }
 
     public function getForeignKey()

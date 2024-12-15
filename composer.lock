@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a089aac95e8607b91a2d0e43af065ff",
+    "content-hash": "a73d6efc572943078255574263a2adef",
     "packages": [
         {
             "name": "akaunting/laravel-setting",
@@ -1957,16 +1957,16 @@
         },
         {
             "name": "mmb/mmb",
-            "version": "dev-main",
+            "version": "dev-context-sync",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rapidmmb/mmb.git",
-                "reference": "73547aa54a64a5c3c1ec5a113eeff52e0c6a824c"
+                "reference": "950a85b1ffed08f5823c92952287de1d44115e02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rapidmmb/mmb/zipball/73547aa54a64a5c3c1ec5a113eeff52e0c6a824c",
-                "reference": "73547aa54a64a5c3c1ec5a113eeff52e0c6a824c",
+                "url": "https://api.github.com/repos/rapidmmb/mmb/zipball/950a85b1ffed08f5823c92952287de1d44115e02",
+                "reference": "950a85b1ffed08f5823c92952287de1d44115e02",
                 "shasum": ""
             },
             "require": {
@@ -1978,7 +1978,6 @@
                 "orchestra/testbench": "^9.0",
                 "phpunit/phpunit": "^11.0@dev"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2005,60 +2004,9 @@
             "description": "Make your bot with Laravel framework",
             "support": {
                 "issues": "https://github.com/rapidmmb/mmb/issues",
-                "source": "https://github.com/rapidmmb/mmb/tree/main"
+                "source": "https://github.com/rapidmmb/mmb/tree/context-sync"
             },
-            "time": "2024-12-02T15:59:19+00:00"
-        },
-        {
-            "name": "mmb/panelkit",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rapidmmb/panelkit.git",
-                "reference": "026c9dc5b10d9daefe69ceec1808ffd80f99c267"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rapidmmb/panelkit/zipball/026c9dc5b10d9daefe69ceec1808ffd80f99c267",
-                "reference": "026c9dc5b10d9daefe69ceec1808ffd80f99c267",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^11.0",
-                "mmb/mmb": "dev-main"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "11.0@dev"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Rapid\\Mmb\\PanelKit\\Providers\\PanelKitServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rapid\\Mmb\\PanelKit\\": "app/",
-                    "Rapid\\Mmb\\PanelKit\\Database\\Seeders\\": "database/seeders/",
-                    "Rapid\\Mmb\\PanelKit\\Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Mahdi Saremi",
-                    "email": "mahdisarmi00@gmail.com"
-                }
-            ],
-            "description": "Panel kit for mmb",
-            "support": {
-                "issues": "https://github.com/rapidmmb/panelkit/issues",
-                "source": "https://github.com/rapidmmb/panelkit/tree/main"
-            },
-            "time": "2024-10-23T13:57:48+00:00"
+            "time": "2024-12-13T20:05:04+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8752,7 +8700,6 @@
     "stability-flags": {
         "akaunting/laravel-setting": 20,
         "mmb/mmb": 20,
-        "mmb/panelkit": 20,
         "rapid/laplus": 20,
         "rapid/voyager": 20,
         "spatie/laravel-permission": 20

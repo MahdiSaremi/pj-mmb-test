@@ -24,6 +24,7 @@ class HomeSection extends Section
         $menu
             ->schema([
                 [ $menu->key("Hello World", fn () => $this->response("Salam Donya =D")) ],
+                [ $menu->key("Test", fn () => $this->newSafe(TestSection::class)->main()) ],
 
                 [ $menu->keyFor("پنل مدیریت", PanelSection::class, 'main')->ifAllowed() ],
             ])

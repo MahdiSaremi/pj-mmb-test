@@ -16,7 +16,7 @@ class StartCommand extends StartCommandAction
 
     public function handle()
     {
-        HomeSection::make()->main();
+        HomeSection::make($this->context)->safe->main();
     }
 
     public function invited(string $code)

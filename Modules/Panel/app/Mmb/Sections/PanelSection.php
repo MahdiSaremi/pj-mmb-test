@@ -2,7 +2,6 @@
 
 namespace Modules\Panel\Mmb\Sections;
 
-use App\Mmb\Admin\Sections\Panel\ChatResourceSection;
 use App\Models\BotUser;
 use Mmb\Action\Section\Attributes\WithBack;
 use Mmb\Action\Section\Menu;
@@ -25,7 +24,6 @@ class PanelSection extends Section
             ->schema([
                 [$menu->key("📊 آمار ربات", 'statistics')],
                 [$menu->keyFor("👤 کاربران", UserResourceSection::class)],
-                [$menu->keyFor("💬 چت ها", ChatResourceSection::class)],
             ])
         ;
     }
@@ -46,7 +44,7 @@ class PanelSection extends Section
 
     public function back()
     {
-        HomeSection::invokes('main');
+        HomeSection::make($this->context)->safe->main();
     }
 
 }

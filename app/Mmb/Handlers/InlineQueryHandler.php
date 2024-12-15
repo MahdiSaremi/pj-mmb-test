@@ -2,6 +2,8 @@
 
 namespace App\Mmb\Handlers;
 
+use App\Models\BotUser;
+use Mmb\Action\Update\HandlerFactory;
 use Mmb\Action\Update\UpdateHandler;
 
 class InlineQueryHandler extends UpdateHandler
@@ -10,7 +12,7 @@ class InlineQueryHandler extends UpdateHandler
     public function handle(HandlerFactory $handler)
     {
         $handler
-            ->match($this->update->inlineQuery)
+            ->match($this->update()->inlineQuery)
             ->recordUser(
                 BotUser::class,
                 $this->update->getUser()?->id,
