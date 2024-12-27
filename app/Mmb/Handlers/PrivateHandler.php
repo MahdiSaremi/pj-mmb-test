@@ -14,10 +14,10 @@ class PrivateHandler extends UpdateHandler
     public function handle(HandlerFactory $handler)
     {
         $handler
-            ->match($this->update()->getChat()?->type == 'private')
+            ->match($this->update->getChat()?->type == 'private')
             ->recordUser(
                 BotUser::class,
-                $this->update()->getUser()?->id,
+                $this->update->getUser()?->id,
                 create: $this->createUser(...),
                 validate: $this->validateUser(...),
                 autoSave: true,
@@ -46,12 +46,12 @@ class PrivateHandler extends UpdateHandler
 
     public function createUser()
     {
-        $user = $this->update()->getUser();
+        $user = $this->update->getUser();
 
         return [
             'id' => $user->id,
             'name' => $user->name,
-            'step' => '',
+            'step' => null,
         ];
     }
 

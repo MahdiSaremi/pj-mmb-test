@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Mmb\Core\Requests\TelegramRequest;
+use Mmb\Core\Client\TelegramClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if (config('app.enable_proxy'))
-            TelegramRequest::appendOptions([
+            TelegramClient::appendOptions([
                 'proxy' => config('app.proxy'),
             ]);
     }

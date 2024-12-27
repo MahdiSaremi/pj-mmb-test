@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.2",
         "akaunting/laravel-setting": "dev-master",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^11.33",
         "laravel/tinker": "^2.9",
         "mmb/mmb": "dev-context-sync",
         "morilog/jalali": "3.*",
