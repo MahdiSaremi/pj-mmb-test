@@ -9,7 +9,7 @@
         "akaunting/laravel-setting": "dev-master",
         "laravel/framework": "^11.33",
         "laravel/tinker": "^2.9",
-        "mmb/mmb": "dev-context-sync",
+        "mmb/mmb": "*",
         "morilog/jalali": "3.*",
         "nwidart/laravel-modules": "^11.1",
         "rapid/laplus": "dev-main",
